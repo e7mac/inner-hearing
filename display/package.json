@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "d3-scale": "^2.2.2",
-    "lodash-es": "^4.17.11"
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@types/d3-scale": "^2.1.1",
