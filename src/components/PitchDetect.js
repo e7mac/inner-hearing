@@ -48,7 +48,7 @@ export default class PitchDetect extends React.Component {
 		return (
         <div>
         {
-            this.state.buttonClicked == false
+            this.state.buttonClicked === false
             ? <button type="button" onClick={this.buttonClicked}>Start</button>
             : this.state.pitch
         }
