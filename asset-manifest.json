@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/inner-hearing/static/css/main.073c9b0a.css",
+    "main.js": "/inner-hearing/static/js/main.2fac258f.js",
+    "index.html": "/inner-hearing/index.html",
+    "main.073c9b0a.css.map": "/inner-hearing/static/css/main.073c9b0a.css.map",
+    "main.2fac258f.js.map": "/inner-hearing/static/js/main.2fac258f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.2fac258f.js"
+  ]
+}
