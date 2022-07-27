@@ -1,17 +1,15 @@
-import "./App.css";
-import PitchDetect from "./components/PitchDetect";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/pages/home/Home";
+import Editor from "./components/pages/player/Editor";
 
 function App() {
-    const queryParams = new URLSearchParams(window.location.search);
-    const mode = queryParams.get("midi_file");
-    console.log(mode);
-
     return (
-        <div className="App">
-            <header className="App-header">
-                <PitchDetect />
-            </header>
-        </div>
+        <Router>
+            <Routes>
+                <Route exact path="/" element={<Home />}></Route>
+                <Route exact path="/editor/:filename" element={<Editor />}></Route>
+            </Routes>
+        </Router>
     );
 }
 

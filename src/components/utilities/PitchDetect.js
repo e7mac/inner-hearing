@@ -1,19 +1,19 @@
-import React from 'react';
-import { PitchDetector } from 'pitchy';
+import React from "react";
+import { PitchDetector } from "pitchy";
 
 export default class PitchDetect extends React.Component {
-	constructor(props) {
-		super(props);
+    constructor(props) {
+        super(props);
         this.buttonClicked = this.buttonClicked.bind(this);
         this.audioContext = new window.AudioContext();
         this.analyserNode = this.audioContext.createAnalyser();
         this.state = {
             buttonClicked: false,
             pitch: 0,
-        }
+        };
     }
 
-	buttonClicked() {
+    buttonClicked() {
         this.setState({
             buttonClicked: true,
         });
@@ -26,7 +26,7 @@ export default class PitchDetect extends React.Component {
             const input = new Float32Array(detector.inputLength);
             this.updatePitch(detector, input, audioContext.sampleRate);
         });
-	}
+    }
 
     updatePitch(detector, input, sampleRate) {
         this.analyserNode.getFloatTimeDomainData(input);
@@ -35,24 +35,22 @@ export default class PitchDetect extends React.Component {
         this.setState({
             pitch: pitch,
         });
-        window.setTimeout(
-            () => this.updatePitch(detector, input, sampleRate),
-        100
-        );
+        window.setTimeout(() => this.updatePitch(detector, input, sampleRate), 100);
     }
 
-	componentDidMount() {
-	}
+    componentDidMount() {}
 
-	render() {
-		return (
-        <div>
-        {
-            this.state.buttonClicked === false
-            ? <button type="button" onClick={this.buttonClicked}>Start</button>
-            : this.state.pitch
-        }
-        </div>
-		);
-	}
+    render() {
+        return (
+            <div>
+                {this.state.buttonClicked === false ? (
+                    <button type="button" onClick={this.buttonClicked}>
+                        Start
+                    </button>
+                ) : (
+                    this.state.pitch
+                )}
+            </div>
+        );
+    }
 }
